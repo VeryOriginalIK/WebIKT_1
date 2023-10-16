@@ -8,6 +8,19 @@ body {
   padding: 0px;
 }
 
+body ::-webkit-scrollbar {
+  width: 1px;
+}
+
+body ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body ::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  outline: 1px solid slategray;
+}
+
 ::selection {
   background: transparent;
 }
@@ -30,16 +43,16 @@ h4 {
 
 .card {
 margin: auto;
-  color: #013243; /*SHERPA BLUE*/
+  color: #021218;
   position: absolute;
   top: 50%;
   left: 60%;
   width: 500px;
-  height: 95%;
+  height: 80%;
   transform-style: preserve-3d;
   transform: translate(-50%,-50%) perspective(2000px);
-  
-  transition: 1s;
+  border-radius: 10px;
+  transition: 2s;
 }
 
 /* .card:hover {
@@ -117,16 +130,32 @@ background-repeat: no-repeat;
   box-sizing: border-box;
   padding: 0 0 0 10px;
   z-index: -1;
-  margin-top: 70px;
+  margin-top: 10px;
+  width: 95%;
+  height: 95%;
+  overflow: auto;
+  scrollbar-color: white;
+  scrollbar-width: thin;
 }
 
 .card .details p {
   font-size: 15px;
-  line-height: 5px;
-  transform: rotate(-10deg);
+  /* line-height: 5px; */
+  /* transform: rotate(-10deg); */
   padding: 0 0 0 20px;
 }
 
 .card .details h4 {
   text-align: center;
+}
+
+.card .details h2 {
+  text-align: center;
+}
+
+.card .details .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
