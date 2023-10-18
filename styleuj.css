@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com');
+@import url('https://fonts.gstatic.com');
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Hind', sans-serif; */
+}
+
+body {
+    background-color: #383838;
+}
+
+body ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+  
+body ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+  
+body ::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    outline: 1px solid slategray;
+}
+
+h4 {
+    font-size: 30px;
+    /* font-family: 'Amatic SC', cursive !important; */
+    margin: 0;
+    top: 50%;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+h4, h3{
+    text-align: center;
+    vertical-align: middle;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    background-color: #fff;
+    width: 50%;
+    height: 80%;
+    border-radius: 20px;
+    perspective: 600px;
+    position: relative;
+}
+
+.book::before {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    width: 50%;
+    height: 100%;
+    right: 50%;
+    background-color: #707070;
+    border-radius: 20px 0 0 20px;
+    transform-origin: center right;
+    transform: rotateY(180deg);
+    transition: 0.7s ease all;
+}
+
+.book:active:before {
+    transform: rotateY(0deg);
+}
+
+/* .book:not(:active)::before {
+    transform: rotateY(180deg);
+} */
+
+
+.book .pg {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.book .pg.pg1 {
+    background-color: #ee5f2a;
+    border-radius: 20px 0 0 20px;
+    left: 0;
+    overflow: scroll;
+}
+
+.book .pg.pg2 {
+    background-color: #30a5da;
+    right: 0;
+    border-radius: 0 20px 20px 0;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 5px;
+  }

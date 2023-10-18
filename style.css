@@ -26,7 +26,7 @@ body ::-webkit-scrollbar-thumb {
   background: transparent;
 }
 
-h4 {
+.imgBox h4 {
   font-size: 8vh;
   font-family: 'Amatic SC', cursive !important;
   margin: 0;
