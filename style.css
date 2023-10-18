@@ -51,7 +51,7 @@ h2 {
 margin: auto;
   color: #021218;
   position: absolute;
-  left: 50%;
+  left: 60%;
   top: 48.5vh;
   width: 53.39vh;
   height: 82vh;
@@ -88,10 +88,7 @@ margin: auto;
   transform-origin: left;
   transform: translate(-50%,-50%) perspective(2000px);
 }
-.card:hover{
-    box-shadow: inset 20vh 0 3vh rgba(0,0,0,.5), 2vh 0 6vh rgba(0,0,0,.5);
-    background: #e0e1dc;
-}
+
 
 .card .imgBox {
 top: 0;
@@ -114,11 +111,7 @@ background-repeat: no-repeat;
 }
 
 
-.card:hover .imgBox {
-  transform: rotateY(-180deg);
-}
-
-.card:hover .bark {
+.card .bark {
   opacity: 1;
   transition: .6s;
   box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
