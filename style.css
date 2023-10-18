@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp');
 
 body {
   
@@ -9,7 +10,7 @@ body {
 }
 
 body ::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
 }
 
 body ::-webkit-scrollbar-track {
@@ -136,6 +137,7 @@ background-repeat: no-repeat;
   /* line-height: 5px; */
   /* transform: rotate(-10deg); */
   padding: 0 0 0 20px;
+  font-family: 'MedievalSharp', cursive !important;
 }
 
 .card .details h4 {
