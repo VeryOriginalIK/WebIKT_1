@@ -1,62 +1,90 @@
-// Sample using dynamic pages with turn.js
 
-var numberOfPages = 1000; 
-
-
-// Adds the pages that the book will need
-function addPage(page, book) {
-    // 	First check if the page is already in the book
-    if (!book.turn('hasPage', page)) {
-        // Create an element for this page
-        var element = $('<div />', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}).html('<i class="loader"></i>');
-        // If not then add the page
-        book.turn('addPage', element, page);
-        // Let's assum that the data is comming from the server and the request takes 1s.
-        setTimeout(function(){
-                element.html('<div class="data">Data for page '+page+'</div>');
-        }, 1000);
+function kemeny() {
+    var imgBoxes = document.getElementsByClassName("imgBox");
+    if (imgBoxes.length > 0) {
+        imgBoxes[0].style.transform = "rotateY(-180deg)";
+    } else {
+        console.error("No elements with class 'imgBox' found.");
     }
+    
+    
+    var imgBoxElement = document.querySelector(".imgBox");
+
+    if (imgBoxElement) {
+        var childElements = imgBoxElement.children;
+
+        for (var i = 0; i < childElements.length; i++) {
+            childElements[i].style.opacity = "0";
+        }
+    }
+
+    var cardElement = document.querySelector(".card");
+    if (cardElement) {
+        cardElement.style.boxShadow = "inset 20vh 0 3vh rgba(0, 0, 0, 0.5), 2vh 0 6vh rgba(0, 0, 0, 0.5)";
+        cardElement.style.background = "#e0e1dc";
+    }
+    document.querySelector("#kemeny").style.display = "block";
+    document.querySelector("#ada").style.display = "none";
+    document.querySelector("#keszitok").style.display = "none";
 }
 
-$(window).ready(function(){
-    $('#book').turn({acceleration: true,
-                        pages: numberOfPages,
-                        elevation: 50,
-                        gradients: !$.isTouch,
-                        when: {
-                            turning: function(e, page, view) {
+function ada() {
+    kemeny();
+    var imgBoxes = document.getElementById("kemeny");
+    console.log(imgBoxes)
+    if (imgBoxes.length > 0) {
+        imgBoxes[0].style.transform = "rotateY(-180deg)";
+    } else {
+        console.error("No elements with class 'imgBox' found.");
+    }
+    
+    
+    var imgBoxElement = document.querySelector(".imgBox");
 
-                                // Gets the range of pages that the book needs right now
-                                var range = $(this).turn('range', page);
+    if (imgBoxElement) {
+        var childElements = imgBoxElement.children;
 
-                                // Check if each page is within the book
-                                for (page = range[0]; page<=range[1]; page++) 
-                                    addPage(page, $(this));
+        for (var i = 0; i < childElements.length; i++) {
+            childElements[i].style.opacity = "0";
+        }
+    }
 
-                            },
+    var cardElement = document.querySelector(".card");
+    if (cardElement) {
+        cardElement.style.boxShadow = "inset 20vh 0 3vh rgba(0, 0, 0, 0.5), 2vh 0 6vh rgba(0, 0, 0, 0.5)";
+        cardElement.style.background = "#e0e1dc";
+    }
+    document.querySelector("#kemeny").style.display = "none";
+    document.querySelector("#ada").style.display = "block";
+    document.querySelector("#keszitok").style.display = "none";
+}
 
-                            turned: function(e, page) {
-                                $('#page-number').val(page);
-                            }
-                        }
-                    });
+function keszitok() {
+    var imgBoxes = document.getElementsByClassName("imgBox");
+    if (imgBoxes.length > 0) {
+        imgBoxes[0].style.transform = "rotateY(-180deg)";
+    } else {
+        console.error("No elements with class 'imgBox' found.");
+    }
+    
+    
+    var imgBoxElement = document.querySelector(".imgBox");
 
-    $('#number-pages').html(numberOfPages);
+    if (imgBoxElement) {
+        var childElements = imgBoxElement.children;
 
-    $('#page-number').keydown(function(e){
+        for (var i = 0; i < childElements.length; i++) {
+            childElements[i].style.opacity = "0";
+        }
+    }
 
-        if (e.keyCode==13)
-            $('#book').turn('page', $('#page-number').val());
-            
-    });
-});
+    var cardElement = document.querySelector(".card");
+    if (cardElement) {
+        cardElement.style.boxShadow = "inset 20vh 0 3vh rgba(0, 0, 0, 0.5), 2vh 0 6vh rgba(0, 0, 0, 0.5)";
+        cardElement.style.background = "#e0e1dc";
+    }
+    document.querySelector("#kemeny").style.display = "none";
+    document.querySelector("#ada").style.display = "none";
+    document.querySelector("#keszitok").style.display = "block";
+}
 
-$(window).bind('keydown', function(e){
-
-    if (e.target && e.target.tagName.toLowerCase()!='input')
-        if (e.keyCode==37)
-            $('#book').turn('previous');
-        else if (e.keyCode==39)
-            $('#book').turn('next');
-
-});
