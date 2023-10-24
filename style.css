@@ -26,16 +26,6 @@ body ::-webkit-scrollbar-thumb {
   background: transparent;
 }
 
-.imgBox h4 {
-  font-size: 8vh;
-  font-family: 'Amatic SC', cursive !important;
-  margin: 0;
-  top: 50%;
-}
-
-h2 {
-  font-size: 3vh;
-}
 
 .imgBox h4, h3{
     text-align: center;
@@ -58,13 +48,8 @@ margin: auto;
   border-radius: 10px;
   transform: translate(-50%,-50%) perspective(2000px);
   transition: 2s;
-  
 }
 
-/* .card:hover {
-  transform: translate(-50%,-50%) perspective(2000px) scale(1);
-  box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
-} */
 
 .card:before {
   content:'';
@@ -90,16 +75,12 @@ margin: auto;
 }
 
 
-.card .imgBox {
+#book .cover{
 top: 0;
 background-image: url(borito1.png);
-background-size: contain;
 background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-origin: left;
-  transition: .7s;
+background-size: cover;
+background-position: absolute;
 }
 
 .card .bark {
@@ -132,26 +113,39 @@ background-repeat: no-repeat;
   scrollbar-width: thin;
 }
 
-.card .details p {
-  font-size: 15px;
-  /* line-height: 5px; */
-  /* transform: rotate(-10deg); */
+#book p{
+  font-size: 10px;
   padding: 0 0 0 20px;
   font-family: 'MedievalSharp', cursive !important;
 }
 
-.card .details h4 {
+#book h4 {
   text-align: center;
 }
 
-.card .details h2 {
+#book h2 {
   text-align: center;
 }
 
-.card .details .text {
+#book .text {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   color: rgb(22, 22, 22);
+}
+
+
+#book .odd{
+	background-image:-webkit-linear-gradient(left, #FFF 95%, #ddd 100%);
+	background-image:-moz-linear-gradient(left, #FFF 95%, #ddd 100%);
+	background-image:-o-linear-gradient(left, #FFF 95%, #ddd 100%);
+	background-image:-ms-linear-gradient(left, #FFF 95%, #ddd 100%);
+}
+
+#book .even{
+	background-image:-webkit-linear-gradient(right, #FFF 95%, #ddd 100%);
+	background-image:-moz-linear-gradient(right, #FFF 95%, #ddd 100%);
+	background-image:-o-linear-gradient(right, #FFF 95%, #ddd 100%);
+	background-image:-ms-linear-gradient(right, #FFF 95%, #ddd 100%);
 }
