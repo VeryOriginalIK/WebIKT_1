@@ -39,7 +39,7 @@ function ada() {
     }
     
     
-    var imgBoxElement = document.querySelector("#kemeny");
+    var imgBoxElement = document.querySelector(".imgBox");
 
     if (imgBoxElement) {
         var childElements = imgBoxElement.children;

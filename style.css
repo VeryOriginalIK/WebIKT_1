@@ -4,7 +4,7 @@
 
 body {
   
-  background: #FDE3A7; /*CAPE HONEY*/
+  background-color: #727272;
   margin: 0px;
   padding: 0px;
 }
@@ -48,7 +48,7 @@ h2 {
 
 .card {
 margin: auto;
-  color: #021218;
+  color: #c5c5c5;
   position: absolute;
   left: 60%;
   top: 48.5vh;
@@ -58,6 +58,7 @@ margin: auto;
   border-radius: 10px;
   transform: translate(-50%,-50%) perspective(2000px);
   transition: 2s;
+  
 }
 
 /* .card:hover {
@@ -91,7 +92,7 @@ margin: auto;
 
 .card .imgBox {
 top: 0;
-background-image: url(elöl-removebg-preview.png);
+background-image: url(borito1.png);
 background-size: contain;
 background-repeat: no-repeat;
   width: 100%;
@@ -152,4 +153,5 @@ background-repeat: no-repeat;
   top: 0;
   left: 0;
   width: 100%;
+  color: rgb(22, 22, 22);
 }
